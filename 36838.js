@@ -1,4 +1,4 @@
-for (let i = 199200; i <= 199299; i++) {
+for (let i = 199200; i <= 199250; i++) {
   fetch(`https://pateng.erad.com/Admin/AdminUsers/Edit?aPatientKey=${i}`)
     .then(res => res.text())
     .then(res => {
