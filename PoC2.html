@@ -1,0 +1,14 @@
+<script>
+  const ids = [1393808, 1863937];
+  (async () => {
+    for (const id of ids) {
+      fetch(`https://integration.servicetitan.com/app/api/customers/${id}/undoMerge`, {
+        method: "POST",
+        mode: "no-cors",
+        credentials: "include",
+        keepalive: true
+      });
+      await new Promise(r => setTimeout(r, 1500));
+    }
+  })();
+</script>
