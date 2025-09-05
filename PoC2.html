@@ -1,14 +1,35 @@
-<script>
-  const ids = [1393808, 1863937];
-  (async () => {
-    for (const id of ids) {
-      fetch(`https://integration.servicetitan.com/app/api/customers/${id}/undoMerge`, {
-        method: "POST",
-        mode: "no-cors",
-        credentials: "include",
-        keepalive: true
-      });
-      await new Promise(r => setTimeout(r, 1500));
-    }
-  })();
-</script>
+<!doctype html>
+<html>
+  <body>
+    <button id="run">Undo 2 merges</button>
+    <script>
+      const ids = [1393808, 1863937];  // newest retained first
+      const delayBetween = 1500;        // ms - gentle pacing
+
+      function postInPopup(list) {
+        if (list.length === 0) return;
+
+        const id = list.shift();
+
+        const w = window.open('', '_blank', 'width=400,height=300');
+        if (!w) { alert('Popup blocked - allow popups for this site'); return; }
+
+        // Write a form into the popup and auto-submit it as a top-level POST
+        w.document.write(`
+          <form id="f" method="POST"
+                action="https://integration.servicetitan.com/app/api/customers/${id}/undoMerge">
+          </form>
+          <script>document.getElementById('f').submit();<\/script>
+        `);
+
+        // Give it time to submit, then close and do the next one
+        setTimeout(() => {
+          try { w.close(); } catch (e) {}
+          setTimeout(() => postInPopup(list), delayBetween);
+        }, 2000);
+      }
+
+      document.getElementById('run').onclick = () => postInPopup([...ids]);
+    </script>
+  </body>
+</html>
