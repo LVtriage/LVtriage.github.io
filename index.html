@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XSS Test Receiver</title>
+  <script>
+    // log visitor info to console
+    console.log("Page loaded at", new Date());
+
+    // optional: send beacon to your collector
+    fetch("https://example.com/log?ref=" + encodeURIComponent(document.referrer) +
+          "&loc=" + encodeURIComponent(window.location.href))
+      .catch(() => {});
+  </script>
+  <style>
+    body { font-family: monospace; background: #111; color: #0f0; padding: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>XSS Hunter Test Page</h1>
+  <p>If you can execute JavaScript here, the payload works.</p>
+</body>
+</html>
